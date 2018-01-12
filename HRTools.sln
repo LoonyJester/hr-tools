@@ -57,6 +57,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRTools.Crosscutting.Messag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRTools.AuthorizationServer", "HRTools.AuthorizationServer\HRTools.AuthorizationServer.csproj", "{6BBD840A-CAC2-437B-ADBD-5BD9D9488C30}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{AAD0AB51-13B4-44D5-897F-278587205110}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\23 jun 2017.zip = Documentation\23 jun 2017.zip
+		Documentation\Documents.zip = Documentation\Documents.zip
+		Documentation\How to run HR Tools application.docx = Documentation\How to run HR Tools application.docx
+		Documentation\HR Tools GuideLine.docx = Documentation\HR Tools GuideLine.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
