@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS `logs` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Message` varchar(4000) NOT NULL,
+  `Level` varchar(45) NOT NULL,
+  `DateTime` datetime NOT NULL,
+  `Timestamp` timestamp(4) NOT NULL,
+  `UserId` varchar(45) DEFAULT NULL,
+  `ThreadId` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+); 

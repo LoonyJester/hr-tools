@@ -1,0 +1,15 @@
+﻿CREATE TABLE IF NOT EXISTS `modulesconfiguration` (
+  Id int(11) NOT NULL AUTO_INCREMENT,
+  ClientId char(36) NOT NULL,
+  ModuleName varchar(255) NOT NULL,
+  StartDate date NOT NULL,
+  EndDate date DEFAULT NULL,
+  PRIMARY KEY (Id),
+  UNIQUE INDEX Id (Id)
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 6
+AVG_ROW_LENGTH = 5461
+CHARACTER SET utf8
+COLLATE utf8_general_ci
+ROW_FORMAT = DYNAMIC;

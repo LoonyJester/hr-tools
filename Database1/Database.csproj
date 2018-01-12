@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F94DDB60-22A3-45B9-994D-6EA6FFB598CD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DbUp, Version=3.3.5.0, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
+      <HintPath>..\packages\dbup.3.3.5\lib\net35\DbUp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DbUp.MySql, Version=3.3.5.0, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
+      <HintPath>..\packages\dbup-mysql.3.3.5\lib\net35\DbUp.MySql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\core_employee_create.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_delete.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_getAll.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_getAllAdmin.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_getTotalCount.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_search.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_update.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_officelocation_getAll.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_user_assignUserToEmployee.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_technology_create.sql" />
+    <EmbeddedResource Include="StoredProcedures\Master\master_configuration_getByClientId.sql" />
+    <EmbeddedResource Include="Tables\Master\master_configuration.sql" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EmbeddedResource Include="Database\logs_Create.sql" />
+    <EmbeddedResource Include="Database\master_Create.sql" />
+    <EmbeddedResource Include="Database\team_international_Create.sql" />
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Tables\7_core_employee.sql" />
+    <EmbeddedResource Include="Tables\4_core_officelocation.sql" />
+    <None Include="Tables\Logs\1_Logs.Logs.mysql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Database\company_Create.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\DefaultData\Master\master_configuration_defaultData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\DefaultData\officeLocation_defaultData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\core_employee_getByCompanyEmail.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\core_employee_deleteBioUrl.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\core_employee_deletePhotoUrl.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\pa_projectAssignment_create.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\pa_projectAssignment_getTotalCount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\pa_projectAssignment_getAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StoredProcedures\pa_projectAssignment_update.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Tables\Master\master_modulesconfiguration.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_create.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_getAll.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_getTotalCount.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_update.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_delete.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_department_create.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_jobTitle_delete.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_jobTitle_getAll.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_getAllByNameAutocomplete.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_jobTitle_update.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_department_getByName.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_getByName.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_getById.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_jobTitle_create.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_technology_delete.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_technology_getAll.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_technology_update.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_user_activate.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_user_create.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_user_update.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_user_updateWithPassword.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_department_delete.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_department_getAllAdmin.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_department_update.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_employee_create.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_employee_delete.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_employee_getAllByNameAutocomplete.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_employee_update.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_department_getAll.sql" />
+    <EmbeddedResource Include="StoredProcedures\pa_project_activate.sql" />
+    <EmbeddedResource Include="StoredProcedures\Master\master_configuration_getAll.sql" />
+    <EmbeddedResource Include="Scripts\DefaultData\aspnetroles_defaultData.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_jobTitle_getByName.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_technology_getByName.sql" />
+    <EmbeddedResource Include="Scripts\DefaultData\Master\master_modulesconfiguration_defaultData.sql" />
+    <EmbeddedResource Include="StoredProcedures\core_employee_getAllCompanyEmailFullName.sql" />
+    <EmbeddedResource Include="StoredProcedures\messageaudit_create.sql" />
+    <EmbeddedResource Include="Scripts\DefaultData\aspnetuserclaims_defaultData.sql" />
+    <EmbeddedResource Include="Scripts\DefaultData\aspnetuserroles_defaultData.sql" />
+    <EmbeddedResource Include="Scripts\DefaultData\aspnetusers.sql" />
+    <EmbeddedResource Include="Scripts\DefaultData\clients.sql" />
+    <EmbeddedResource Include="Scripts\aspnetusers_alter.sql" />
+    <Content Include="StoredProcedures\Master\master_modulesconfiguration_create.sql" />
+    <Content Include="StoredProcedures\Master\master_modulesconfiguration_getActiveModulesByClientId.sql" />
+    <Content Include="StoredProcedures\Master\master_modulesconfiguration_getAll.sql" />
+    <Content Include="StoredProcedures\Master\master_modulesconfiguration_update.sql" />
+    <EmbeddedResource Include="Tables\0_messageaudit.sql" />
+    <EmbeddedResource Include="Tables\31_auth_Clients.sql" />
+    <EmbeddedResource Include="Tables\37_auth_AspNetUserLogins.sql" />
+    <EmbeddedResource Include="Tables\36_auth_AspNetUserClaims.sql" />
+    <EmbeddedResource Include="Tables\34_auth_AspNetUsers.sql" />
+    <EmbeddedResource Include="Tables\35_auth_AspNetUserRoles.sql" />
+    <EmbeddedResource Include="Tables\33_auth_AspNetRoles.sql" />
+    <EmbeddedResource Include="Tables\32_auth_RefreshTokens.sql" />
+    <EmbeddedResource Include="Tables\6_core_technology.sql" />
+    <EmbeddedResource Include="Tables\5_core_jobTitle.sql" />
+    <EmbeddedResource Include="Tables\8_pa_department.sql" />
+    <EmbeddedResource Include="Tables\10_pa_employee.sql" />
+    <EmbeddedResource Include="Tables\9_pa_project.sql" />
+    <EmbeddedResource Include="Tables\11_pa_projectassignment.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\OctoPack.3.4.2\tools\OctoPack.targets" Condition="Exists('..\packages\OctoPack.3.4.2\tools\OctoPack.targets')" />
+  <Target Name="EnsureOctoPackImported" BeforeTargets="BeforeBuild" Condition="'$(OctoPackImported)' == ''">
+    <Error Condition="!Exists('..\packages\OctoPack.3.4.2\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="You are trying to build with OctoPack, but the NuGet targets file that OctoPack depends on is not available on this computer. This is probably because the OctoPack package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\OctoPack.3.4.2\tools\OctoPack.targets') And ('$(RunOctoPack)' != '' And $(RunOctoPack))" Text="OctoPack cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <PropertyGroup>
+    <SsdtUnitTestVersion>2.0</SsdtUnitTestVersion>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

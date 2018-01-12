@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A285F1A-6B37-4872-B9F0-5F4549780069}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HRTools.Core.Services</RootNamespace>
+    <AssemblyName>HRTools.Core.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NewId, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b8e0e9f2f1e657fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\NewId.3.0.0\lib\net452\NewId.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=3.2.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.2.0\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Company\CompanyService.cs" />
+    <Compile Include="Company\ICompanyService.cs" />
+    <Compile Include="Company\ICompanyServiceAdmin.cs" />
+    <Compile Include="Employee\EmployeeServiceAdmin.cs" />
+    <Compile Include="Employee\EmployeeService.cs" />
+    <Compile Include="Employee\EmployeeValidator.cs" />
+    <Compile Include="Employee\IEmployeeServiceAdmin.cs" />
+    <Compile Include="Employee\IEmployeeService.cs" />
+    <Compile Include="JobTitle\IJobTitleService.cs" />
+    <Compile Include="JobTitle\IJobTitleServiceAdmin.cs" />
+    <Compile Include="JobTitle\JobTitleService.cs" />
+    <Compile Include="ModuleConfiguration\IModulesConfigurationServiceAdmin.cs" />
+    <Compile Include="ModuleConfiguration\ModulesConfigurationServiceAdmin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Technology\ITechnologyService.cs" />
+    <Compile Include="Technology\ITechnologyServiceAdmin.cs" />
+    <Compile Include="Technology\TechnologyService.cs" />
+    <Compile Include="User\IUserServiceAdmin.cs" />
+    <Compile Include="User\UserComparer.cs" />
+    <Compile Include="User\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HRTools.Core.Common\HRTools.Core.Common.csproj">
+      <Project>{F29A5E35-693D-46C0-A054-6B0D2D3400EA}</Project>
+      <Name>HRTools.Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRTools.Core.Repositories\HRTools.Core.Repositories.csproj">
+      <Project>{9fae9a43-f288-4d6d-9397-bdf58ea727da}</Project>
+      <Name>HRTools.Core.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRTools.Crosscutting.Common\HRTools.Crosscutting.Common.csproj">
+      <Project>{5389c877-d6df-4d2a-a957-8833f54d98c1}</Project>
+      <Name>HRTools.Crosscutting.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRTools.Crosscutting.Messaging\HRTools.Crosscutting.Messaging.csproj">
+      <Project>{2761cee5-7fe1-4837-aa0b-29d889768582}</Project>
+      <Name>HRTools.Crosscutting.Messaging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HRTools.ProjectAssignment.Common\HRTools.ProjectAssignment.Common.csproj">
+      <Project>{D5682932-CAC6-4F16-8654-943F093B196E}</Project>
+      <Name>HRTools.ProjectAssignment.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

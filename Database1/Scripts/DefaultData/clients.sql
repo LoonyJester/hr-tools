@@ -1,0 +1,1 @@
+INSERT INTO clients(Id, Secret, Name, Active, RefreshTokenLifeTime, AllowedOrigin) VALUES('ngAuthApp', '5YV7M1r981yoGhELyB84aC+KiYksxZf1OY3++C1CtRM=', 'Client Application', True, 7200, NULL);

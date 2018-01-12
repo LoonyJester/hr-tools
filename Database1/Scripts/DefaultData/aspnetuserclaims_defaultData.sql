@@ -1,0 +1,5 @@
+INSERT IGNORE INTO aspnetuserclaims(Id, UserId, ClaimType, ClaimValue) VALUES(1, '1130780f-6ae3-4892-a478-52bd1b4322d5', 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role', 'SuperAdmin');
+INSERT IGNORE INTO aspnetuserclaims(Id, UserId, ClaimType, ClaimValue) VALUES(2, '1130780f-6ae3-4892-a478-52bd1b4322d5', 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role', 'Manager');
+INSERT IGNORE INTO aspnetuserclaims(Id, UserId, ClaimType, ClaimValue) VALUES(3, '1130780f-6ae3-4892-a478-52bd1b4322d5', 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role', 'Employee');
+INSERT IGNORE INTO aspnetuserclaims(Id, UserId, ClaimType, ClaimValue) VALUES(4, '1130780f-6ae3-4892-a478-52bd1b4322d5', 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role', 'Recruiter');
+INSERT IGNORE INTO aspnetuserclaims(Id, UserId, ClaimType, ClaimValue) VALUES(5, '1130780f-6ae3-4892-a478-52bd1b4322d5', 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role', 'Admin');

@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS AspNetUserRoles (
+  UserId varchar(128) NOT NULL,
+  RoleId varchar(128) NOT NULL,
+  PRIMARY KEY (UserId, RoleId),
+  CONSTRAINT FK_aspnetuserroles_RoleId FOREIGN KEY (RoleId)
+  REFERENCES team_international.aspnetroles (Id) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT FK_aspnetuserroles_UserId FOREIGN KEY (UserId)
+  REFERENCES team_international.aspnetusers (Id) ON DELETE CASCADE ON UPDATE RESTRICT
+)
+ENGINE = INNODB
+AUTO_INCREMENT = 14
+AVG_ROW_LENGTH = 1365
+CHARACTER SET utf8
+COLLATE utf8_general_ci
+ROW_FORMAT = DYNAMIC;
